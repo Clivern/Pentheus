@@ -4,7 +4,7 @@
     <p align="center">Your Database Guardian, Set up in Minutes.</p>
     <p align="center">
         <a href="https://github.com/Clivern/Pentheus/actions"><img src="https://github.com/Clivern/Pentheus/actions/workflows/build.yml/badge.svg"></a>
-        <a href="https://github.com/Clivern/Pentheus/releases"><img src="https://img.shields.io/badge/Version-v0.1.0-green.svg"></a>
+        <a href="https://github.com/Clivern/Pentheus/releases"><img src="https://img.shields.io/badge/Version-v0.1.1-green.svg"></a>
         <a href="https://github.com/Clivern/Pentheus/blob/main/LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-green.svg"></a>
     </p>
 </p>
