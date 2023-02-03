@@ -9,12 +9,12 @@
     </p>
 </p>
 
-Pentheus — your go-to command-line buddy for keeping your databases safe and sound! Built with Rust, this nifty tool makes backing up and storing your SQLite, MySQL, and PostgreSQL databases super easy. Let’s make sure your data is always protected!
+Pentheus — your go-to command-line buddy for keeping your databases safe and sound! Built with `Rust`, this nifty tool makes backing up and storing your `SQLite`, `MySQL`, and `PostgreSQL` databases super easy. Let’s make sure your data is always protected!
 
 ## Features
 
-- Multi-Database Support: Back up your SQLite, MySQL, and PostgreSQL databases without breaking a sweat.
-- Storage Options Galore: Choose to stash your backups locally or in the cloud (Amazon S3) — your choice!
+- Multi-Database Support: Back up your `SQLite`, `MySQL`, and `PostgreSQL` databases without breaking a sweat.
+- Storage Options Galore: Choose to stash your backups locally or in the cloud (Amazon `S3`) — your choice!
 - Compression Magic: Want to save some space? Go ahead and compress those backups!
 - Automated Backups: Set up cron jobs to handle backups automatically. Just set it and forget it!
 - Backup Tracking: Keep tabs on your backups with a handy state file—no more guessing!
