@@ -3,6 +3,7 @@
 // license that can be found in the LICENSE file.
 
 mod cmd;
+mod config;
 use clap::Command;
 use cmd::version::get_version;
 

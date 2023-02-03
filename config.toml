@@ -1,0 +1,48 @@
+# Database backups
+[database]
+  [database.sqlite_db_01]
+  driver = "sqlite"
+  path = "/opt/backup/app1-db.sqlite"
+
+  [database.my_mysql_db_01]
+  driver = "mysql"
+  host = "mysql_host"
+  port = 3306
+  user = "mysql_user"
+  password = "mysql_password"
+  database = "my_mysql_db"
+
+  [database.my_postgres_db_01]
+  driver = "postgres"
+  host = "postgres_host"
+  port = 5432
+  user = "postgres"
+  password = "postgres_password"
+  database = "my_postgres_db"
+
+# Backup storage
+[storage]
+  [storage.local_store]
+  driver = "local"
+  path = "/path/to/local/backup"
+  compress = "zip"
+
+  [storage.s3_store]
+  driver = "s3"
+  bucket = "my-backup-bucket"
+  region = "us-east-1"
+  access_key = "my_access_key"
+  secret_key = "my_secret_key"
+  compress = "none"
+
+# Cron Jobs
+[cron]
+  [cron.sqlite_db_01_cron]
+  schedule = "5 4 * * *"
+  database = "sqlite_db_01"
+  storage = "local_store"
+
+# Backups state file
+[state]
+storage = "s3_store"
+path = "/state.json"
