@@ -9,13 +9,75 @@
     </p>
 </p>
 
+Pentheus — your go-to command-line buddy for keeping your databases safe and sound! Built with Rust, this nifty tool makes backing up and storing your SQLite, MySQL, and PostgreSQL databases super easy. Let’s make sure your data is always protected!
+
+## Features
+
+- Multi-Database Support: Back up your SQLite, MySQL, and PostgreSQL databases without breaking a sweat.
+- Storage Options Galore: Choose to stash your backups locally or in the cloud (Amazon S3) — your choice!
+- Compression Magic: Want to save some space? Go ahead and compress those backups!
+- Automated Backups: Set up cron jobs to handle backups automatically. Just set it and forget it!
+- Backup Tracking: Keep tabs on your backups with a handy state file—no more guessing!
 
 ## Usage
 
-Here is how to install and use `pentheus` command line tool.
+First, you’ll want to install `pentheus` using `Cargo`. Open your terminal and run:
 
 ```zsh
 $ cargo install pentheus
+```
+
+Next, create a `TOML` config file to tell `pentheus` how to back up your databases. Here’s a quick example to get you rolling:
+
+```toml
+# Database backups
+[database]
+  [database.sqlite_db_01]
+  driver = "sqlite"
+  path = "/opt/backup/app1-db.sqlite"
+
+  [database.my_mysql_db_01]
+  driver = "mysql"
+  host = "mysql_host"
+  port = 3306
+  user = "mysql_user"
+  password = "mysql_password"
+  database = "my_mysql_db"
+
+  [database.my_postgres_db_01]
+  driver = "postgres"
+  host = "postgres_host"
+  port = 5432
+  user = "postgres"
+  password = "postgres_password"
+  database = "my_postgres_db"
+
+# Backup storage
+[storage]
+  [storage.local_store]
+  driver = "local"
+  path = "/path/to/local/backup"
+  compress = "zip"
+
+  [storage.s3_store]
+  driver = "s3"
+  bucket = "my-backup-bucket"
+  region = "us-east-1"
+  access_key = "my_access_key"
+  secret_key = "my_secret_key"
+  compress = "none"
+
+# Cron Jobs
+[cron]
+  [cron.sqlite_db_01_cron]
+  schedule = "5 4 * * *"
+  database = "sqlite_db_01"
+  storage = "local_store"
+
+# Backups state file
+[state]
+storage = "s3_store"
+path = "/state.json"
 ```
 
 
