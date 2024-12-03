@@ -1,4 +1,4 @@
-FROM rust:1.67.0 as build
+FROM rust:1.83.0 as build
 
 RUN rustup override set nightly
 
@@ -12,7 +12,7 @@ COPY ./ ./
 # Build for Release
 RUN cargo build --release
 
-FROM rust:1.67.0
+FROM rust:1.83.0
 
 RUN mkdir /etc/app
 RUN mkdir /etc/app/cache
