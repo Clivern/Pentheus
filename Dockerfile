@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN cargo install pentheus --version 0.1.1
 
 # Stage 2: Create the final image
-FROM ubuntu:24.10
+FROM ubuntu:oracular-20241120
 
 # Install necessary libraries and database tools
 RUN apt-get update && apt-get install -y --no-install-recommends \
